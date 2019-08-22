@@ -1,2 +1,5 @@
-# docker-r
-Docker image with R inside and a lot of system libs
+# docker-gosu
+
+`gosu` prepared for debian.
+
+To be used for building other debian based images.
