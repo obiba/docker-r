@@ -23,5 +23,5 @@ RUN \
   DEBIAN_FRONTEND=noninteractive apt-get purge -y texlive*doc
 
 # Install additional R packages (see opal-rserver package)
-RUN Rscript -e "install.packages(c('opal', 'opalr', 'resourcer', 'BiocManager', 'devtools', 'tidyverse', 'knitr', 'rmarkdown'), repos=c('https://cloud.r-project.org', 'https://cran.obiba.org'), dependencies=TRUE, lib='/usr/local/lib/R/site-library')"
+RUN Rscript -e "install.packages(c('opal', 'opalr', 'BiocManager', 'devtools', 'tidyverse', 'knitr', 'rmarkdown'), repos=c('https://cloud.r-project.org', 'https://cran.obiba.org'), dependencies=TRUE, lib='/usr/local/lib/R/site-library')"
 RUN Rscript -e "install.packages('unixtools', repos = 'http://www.rforge.net/')"
