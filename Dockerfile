@@ -23,5 +23,5 @@ RUN \
 
 # Install additional R packages (see opal-rserver package)
 RUN \
-  Rscript -e "install.packages(c('opalr', 'BiocManager', 'devtools', 'tidyverse', 'knitr', 'rmarkdown', 'labelled', 'sqldf'), repos=c('https://cloud.r-project.org', 'https://cran.obiba.org'), dependencies=TRUE, lib='/usr/local/lib/R/site-library')" && \
+  Rscript -e "install.packages(c('opalr', 'BiocManager', 'devtools', 'tidyverse', 'knitr', 'rmarkdown', 'labelled', 'haven', 'sqldf'), repos=c('https://cloud.r-project.org', 'https://cran.obiba.org'), dependencies=TRUE, lib='/usr/local/lib/R/site-library')" && \
   Rscript -e "install.packages('unixtools', repos = 'http://www.rforge.net/')"
