@@ -12,13 +12,10 @@ ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# GPG setup
-RUN \
-  gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' && \
-  gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
-
 # Install latest R and system dependencies
 RUN \
+  gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' && \
+  gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | tee /etc/apt/trusted.gpg.d/cran_debian_key.asc && \
   echo 'deb http://cran.r-project.org/bin/linux/debian bullseye-cran40/' | tee /etc/apt/sources.list.d/r.list && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y r-base-core && \
