@@ -4,10 +4,15 @@
 
 no_cache=false
 
+all:
+	sudo docker build --no-cache=true -t="obiba/obiba-r:$(tag)" . && \
+		sudo docker build -t="obiba/obiba-r:latest" . && \
+		sudo docker image push obiba/obiba-r:$(tag) && \
+		sudo docker image push obiba/obiba-r:latest
+
 # Build Docker image
 build:
 	sudo docker build --no-cache=$(no_cache) -t="obiba/obiba-r:$(tag)" .
 
 push:
 	sudo docker image push obiba/obiba-r:$(tag)
-
