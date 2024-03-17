@@ -10,7 +10,6 @@ all:
 	sudo docker build --no-cache=true -t="obiba/obiba-r:$(tag)-java-$(java)-$(os)" . && \
 		sudo docker tag "obiba/obiba-r:$(tag)-java-$(java)-$(os)" "obiba/obiba-r:$(tag)-$(os)" && \
 		sudo docker tag "obiba/obiba-r:$(tag)-java-$(java)-$(os)" "obiba/obiba-r:$(tag)" && \
-		sudo docker build -t="obiba/obiba-r:$(tag)" . && \
 		sudo docker image push obiba/obiba-r:$(tag)-java-$(java)-$(os) && \
 		sudo docker image push obiba/obiba-r:$(tag)-$(os) && \
 		sudo docker image push obiba/obiba-r:$(tag)
