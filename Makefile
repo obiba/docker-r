@@ -2,8 +2,8 @@
 # Docker helper
 #
 
-no_cache=false
-os=jammy
+no_cache=true
+os=noble
 java=21
 
 all:
@@ -16,7 +16,7 @@ all:
 
 # Build Docker image
 build:
-	sudo docker build --no-cache=$(no_cache) -t="obiba/obiba-r:$(tag)" . --progress=plain
+	sudo docker build --pull --no-cache=$(no_cache) -t="obiba/obiba-r:$(tag)" . --progress=plain
 
 push:
 	sudo docker image push obiba/obiba-r:$(tag)
