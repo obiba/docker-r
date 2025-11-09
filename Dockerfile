@@ -4,7 +4,7 @@
 # https://github.com/obiba/docker-r
 #
 
-FROM eclipse-temurin:21-jre-noble AS server-released
+FROM eclipse-temurin:25-jre-noble AS server-released
 
 LABEL OBiBa=<dev@obiba.org>
 
