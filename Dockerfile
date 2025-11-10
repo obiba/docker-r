@@ -15,7 +15,7 @@ ENV LC_ALL=C.UTF-8
 # Install latest R and system dependencies
 RUN \
   apt update -qq && \
-  apt install -y software-properties-common dirmngr && \
+  apt install -y wget software-properties-common dirmngr && \
   wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc && \
   add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
   apt install -y r-base libcurl4-openssl-dev libssl-dev libsasl2-dev libssh-dev libmariadb-dev libmariadb-dev-compat libpq-dev libsodium-dev libgit2-dev libssh2-1-dev libxml2-dev libcairo-dev freeglut3-dev pandoc cargo libmagick++-dev libharfbuzz-dev libfribidi-dev libv8-dev build-essential cmake && \
